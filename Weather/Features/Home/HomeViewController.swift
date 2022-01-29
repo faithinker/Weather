@@ -22,6 +22,9 @@ class HomeViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    /// 20
+    let cCons: CGFloat = 20
+    
     private var selectedIndex: IndexPath = IndexPath(row: 0, section: 0) {
         didSet {
             collectionView.reloadData()
@@ -38,8 +41,12 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - View
+    lazy var naviBar = NaviBar(.setting).then {
+        $0.titleLabel.text = "홈"
+    }
+    
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout().then {
-        let dynamicWidth = (UIScreen.main.bounds.size.width - 40) / 3
+        let dynamicWidth = (UIScreen.main.bounds.size.width - cCons*2) / 3
         $0.itemSize = CGSize(width: dynamicWidth, height: 35)
         $0.minimumLineSpacing = 0
         $0.minimumInteritemSpacing = 0
@@ -66,15 +73,20 @@ class HomeViewController: UIViewController {
     func setupLayout() {
         view.backgroundColor = .white
         
-        view.addSubviews([collectionView, tableView])
+        view.addSubviews([naviBar, collectionView, tableView])
         
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor,constant: 150).isActive = true
+        naviBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        naviBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        naviBar.topAnchor.constraint(equalTo: view.topAnchor, constant: UIView.topSafeArea).isActive = true
+        naviBar.heightAnchor.constraint(equalToConstant: naviBar.naviBarHeight).isActive = true
+        
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: cCons).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -cCons).isActive = true
+        collectionView.topAnchor.constraint(equalTo: naviBar.bottomAnchor,constant: 150).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: cCons).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -cCons).isActive = true
         tableView.topAnchor.constraint(equalTo: collectionView.topAnchor,constant: 50).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor) .isActive = true
     }

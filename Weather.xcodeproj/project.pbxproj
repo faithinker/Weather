@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E3CE55A95F0D010CB4F0940D /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3619F93DC68E3D6C54B9CD /* Pods_Weather.framework */; };
+		F448274C27A56366005018FE /* NaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448274B27A56366005018FE /* NaviBar.swift */; };
+		F448275127A5648E005018FE /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448275027A5648E005018FE /* R.swift */; };
+		F448275527A56903005018FE /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448275427A56902005018FE /* Symbol.swift */; };
 		F463D93027A4F4A200E745DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463D92F27A4F4A200E745DD /* AppDelegate.swift */; };
 		F463D93227A4F4A200E745DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463D93127A4F4A200E745DD /* SceneDelegate.swift */; };
 		F463D93427A4F4A200E745DD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F463D93327A4F4A200E745DD /* HomeViewController.swift */; };
@@ -27,6 +30,9 @@
 		3B3619F93DC68E3D6C54B9CD /* Pods_Weather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		481BDAF5C50E1956A97F4EA8 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 		716EF581E32C810ABEBC0044 /* Pods-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.release.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.release.xcconfig"; sourceTree = "<group>"; };
+		F448274B27A56366005018FE /* NaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviBar.swift; sourceTree = "<group>"; };
+		F448275027A5648E005018FE /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		F448275427A56902005018FE /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		F463D92C27A4F4A200E745DD /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F463D92F27A4F4A200E745DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F463D93127A4F4A200E745DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +80,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F448274F27A56458005018FE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F448274B27A56366005018FE /* NaviBar.swift */,
+				F463D99A27A5047E00E745DD /* Then.swift */,
+				F463D99E27A5052B00E745DD /* Log.swift */,
+				F448275027A5648E005018FE /* R.swift */,
+				F448275427A56902005018FE /* Symbol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F463D92327A4F4A200E745DD = {
 			isa = PBXGroup;
 			children = (
@@ -95,9 +113,10 @@
 		F463D92E27A4F4A200E745DD /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				F463D99027A5002B00E745DD /* Foundation */,
 				F463D94927A4F7FC00E745DD /* Features */,
+				F463D99027A5002B00E745DD /* Foundation */,
 				F463D94527A4F7A400E745DD /* Model */,
+				F448274F27A56458005018FE /* Services */,
 				F463D94627A4F7AA00E745DD /* Supporting Files */,
 			);
 			path = Weather;
@@ -144,7 +163,6 @@
 		F463D99027A5002B00E745DD /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				F463D99927A5046E00E745DD /* VanillaSwift */,
 				F463D99127A5003200E745DD /* Extension */,
 			);
 			path = Foundation;
@@ -158,15 +176,6 @@
 				F463D9A527A507D100E745DD /* Color+.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		F463D99927A5046E00E745DD /* VanillaSwift */ = {
-			isa = PBXGroup;
-			children = (
-				F463D99A27A5047E00E745DD /* Then.swift */,
-				F463D99E27A5052B00E745DD /* Log.swift */,
-			);
-			path = VanillaSwift;
 			sourceTree = "<group>";
 		};
 		F463D9A127A5055500E745DD /* Cell */ = {
@@ -298,7 +307,10 @@
 				F463D93427A4F4A200E745DD /* HomeViewController.swift in Sources */,
 				F463D9A327A5055E00E745DD /* SortCell.swift in Sources */,
 				F463D99B27A5047E00E745DD /* Then.swift in Sources */,
+				F448275127A5648E005018FE /* R.swift in Sources */,
+				F448274C27A56366005018FE /* NaviBar.swift in Sources */,
 				F463D93027A4F4A200E745DD /* AppDelegate.swift in Sources */,
+				F448275527A56903005018FE /* Symbol.swift in Sources */,
 				F463D9A627A507D100E745DD /* Color+.swift in Sources */,
 				F463D95427A4F9EC00E745DD /* HomeViewModel.swift in Sources */,
 				F463D93227A4F4A200E745DD /* SceneDelegate.swift in Sources */,

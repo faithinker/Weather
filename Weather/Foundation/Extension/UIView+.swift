@@ -123,18 +123,12 @@ extension UIView {
 }
 
 extension UIView {
-    var realSafeAreaInsetTop: CGFloat {
-        return UIApplication.shared.keyWindowInConnectedScenes?.safeAreaInsets.top ?? 0
-    }
-    var realSafeAreaInsetLeft: CGFloat {
-        return UIApplication.shared.keyWindowInConnectedScenes?.safeAreaInsets.left ?? 0
-    }
-    var realSafeAreaInsetRight: CGFloat {
-        return UIApplication.shared.keyWindowInConnectedScenes?.safeAreaInsets.right ?? 0
-    }
-    var realSafeAreaInsetBottom: CGFloat {
-        return UIApplication.shared.keyWindowInConnectedScenes?.safeAreaInsets.bottom ?? 0
-    }
+    static let window = UIApplication.shared.windows.first?.safeAreaInsets
+    
+    static let topSafeArea = window?.top ?? 0
+    static let leftSafeArea = window?.left ?? 0
+    static let rightSafeArea = window?.right ?? 0
+    static let bottomSafeArea = window?.bottom ?? 0
 }
 
 extension UIView {
